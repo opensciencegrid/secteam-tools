@@ -311,7 +311,9 @@ export SVNDIR=$CABASEDIR/../release
 cd "$CABASEDIR/$OUR_CERTS_VERSION"
 #03/26/19 - DEB release deprecated
 #cp "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "osg-ca-certs-$OUR_CERTS_VERSION-0.deb" "$SVNDIR"
-cp "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "$SVNDIR"
+#01/27/19 - removing Sec team signature
+#cp "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "$SVNDIR"
+cp "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "$SVNDIR"
 cp ca-certs-version "$SVNDIR/ca-certs-version-$OUR_CERTS_VERSION"
 cp ca-certs-version "$CADIST"
 #[01/08/19] adding to make MD5 checksum
@@ -328,7 +330,9 @@ cd "$SVNDIR"
 #svn add "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "osg-ca-certs-$OUR_CERTS_VERSION-0.deb" "ca-certs-version-$OUR_CERTS_VERSION" "cacerts_md5sum-$OUR_CERTS_VERSION.txt" "cacerts_sha256sum-$OUR_CERTS_VERSION.txt"
 #[10/21/19] dropping MD5 checksum [SOFTWARE-3005]
 #svn add "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "ca-certs-version-$OUR_CERTS_VERSION" "cacerts_md5sum-$OUR_CERTS_VERSION.txt" "cacerts_sha256sum-$OUR_CERTS_VERSION.txt"
-svn add "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "ca-certs-version-$OUR_CERTS_VERSION" "cacerts_sha256sum-$OUR_CERTS_VERSION.txt"
+#01/27/19 - removing Sec team signature
+#svn add "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig" "ca-certs-version-$OUR_CERTS_VERSION" "cacerts_sha256sum-$OUR_CERTS_VERSION.txt"
+svn add "osg-certificates-$OUR_CERTS_VERSION.tar.gz" "ca-certs-version-$OUR_CERTS_VERSION" "cacerts_sha256sum-$OUR_CERTS_VERSION.txt"
 svn commit -m "OSG certificates distribution $OUR_CERTS_VERSION"
 
 echo "Process for IGTFNEW is completed."
@@ -539,7 +543,9 @@ export SVNDIR=$CABASEDIR/../release
 cd $CABASEDIR/$OUR_CERTS_VERSION
 #03/26/19 - DEB release deprecated
 #cp osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig osg-ca-certs-$OUR_CERTS_VERSION-0.deb $SVNDIR
-cp osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig $SVNDIR
+#01/27/20 - remove Secteam signature
+#cp osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig $SVNDIR
+cp osg-certificates-$OUR_CERTS_VERSION.tar.gz $SVNDIR
 cp ca-certs-version $SVNDIR/ca-certs-version-$OUR_CERTS_VERSION
 cp ca-certs-version $CADIST
 #[01/08/19] adding to make MD5 checksum
@@ -556,7 +562,9 @@ cd $SVNDIR
 #svn add osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig osg-ca-certs-$OUR_CERTS_VERSION-0.deb ca-certs-version-$OUR_CERTS_VERSION cacerts_md5sum-$OUR_CERTS_VERSION.txt cacerts_sha256sum-$OUR_CERTS_VERSION.txt;
 #[10/21/19] dropping MD5 checksum [SOFTWARE-3005]
 #svn add osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig ca-certs-version-$OUR_CERTS_VERSION cacerts_md5sum-$OUR_CERTS_VERSION.txt cacerts_sha256sum-$OUR_CERTS_VERSION.txt;
-svn add osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig ca-certs-version-$OUR_CERTS_VERSION cacerts_sha256sum-$OUR_CERTS_VERSION.txt; 
+#01/27/20 - remove Secteam signature
+#svn add osg-certificates-$OUR_CERTS_VERSION.tar.gz osg-certificates-$OUR_CERTS_VERSION.tar.gz.sig ca-certs-version-$OUR_CERTS_VERSION cacerts_sha256sum-$OUR_CERTS_VERSION.txt; 
+svn add osg-certificates-$OUR_CERTS_VERSION.tar.gz ca-certs-version-$OUR_CERTS_VERSION cacerts_sha256sum-$OUR_CERTS_VERSION.txt; 
 svn commit -m "OSG certificates distribution $OUR_CERTS_VERSION"
 
 echo "Process for OSG CA i.e. NEW is completed."
